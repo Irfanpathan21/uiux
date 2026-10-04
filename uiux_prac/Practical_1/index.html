@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        form { width: 320px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { width: 100%; padding: 8px; margin: 6px 0 14px 0; box-sizing: border-box; }
+        input[type="submit"] { background: #2563eb; color: white; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        Name:
+        <input type="text" id="name">
+        Email:
+        <input type="text" id="email">
+        Password:
+        <input type="password" id="password">
+        Phone:
+        <input type="text" id="phone">
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let phone = document.getElementById("phone").value.trim();
+
+            if (name == "") {
+                alert("Please enter your name");
+                return false;
+            }
+            if (email == "" || !email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password must contain at least 6 characters");
+                return false;
+            }
+            if (phone.length != 10 || isNaN(phone)) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>

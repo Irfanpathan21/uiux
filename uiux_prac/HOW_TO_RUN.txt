@@ -1,0 +1,172 @@
+================================================================================
+                     UI/UX PRACTICAL EXAM - HOW TO RUN GUIDE
+================================================================================
+
+Folder Location: uiux_prac/
+This folder contains all 7 practicals organized into individual numbered folders.
+All original code from your document has been preserved exactly as provided.
+
+--------------------------------------------------------------------------------
+SUMMARY OF PRACTICALS
+--------------------------------------------------------------------------------
+Practical_1 : Form Validation using JavaScript
+Practical_2 : Shopping List application using AngularJS
+Practical_3 : Simple Calculator using React JS
+Practical_4 : NodeJS Server serving static HTML & CSS without Express
+Practical_5 : Counter application using React JS
+Practical_6 : Simple Login Form using React JS
+Practical_7 : Chat Module using HTML, CSS, and JavaScript
+
+================================================================================
+PRACTICAL 1: Form Validation using JavaScript
+================================================================================
+Folder: Practical_1/
+Files:
+  - index.html
+
+HOW TO RUN:
+  1. Open the "Practical_1" folder.
+  2. Double-click on "index.html" to open it in any web browser (Chrome, Edge, Firefox).
+  3. Fill in the form fields (Name, Email, Password, Phone) and click "Register".
+  4. The JavaScript will validate inputs (empty checks, email '@' symbol, 6+ character password, 10-digit phone number) and display alert dialogs.
+
+
+================================================================================
+PRACTICAL 2: Shopping List using AngularJS
+================================================================================
+Folder: Practical_2/
+Files:
+  - index.html
+
+HOW TO RUN:
+  1. Make sure your computer is connected to the Internet (it loads AngularJS via Google CDN).
+  2. Open the "Practical_2" folder.
+  3. Double-click on "index.html" to open it in your web browser.
+  4. Type an item into the input box and click "Add" to add it to the shopping list.
+  5. Click the "Remove" button next to any item to delete it from the list.
+
+
+================================================================================
+PRACTICAL 3: Simple Calculator using React JS
+================================================================================
+Folder: Practical_3/
+Files:
+  - index.html       (Main HTML template)
+  - src/main.jsx     (React root mounting script)
+  - src/App.jsx      (Calculator component logic)
+  - package.json     (Project dependencies: React + Vite)
+  - vite.config.js   (Vite configuration)
+  - standalone.html  (Optional: Single-file version with React CDN for instant run)
+
+HOW TO RUN (Method 1 - Standard Vite React setup):
+  1. Open Command Prompt (cmd) or PowerShell.
+  2. Navigate to Practical_3:
+       cd "uiux_prac\Practical_3"
+  3. Install dependencies:
+       npm install
+  4. Start the development server:
+       npm run dev
+  5. Open the URL shown in terminal (usually http://localhost:5173/) in your browser.
+
+HOW TO RUN (Method 2 - Direct Browser / Standalone):
+  1. If Node.js/npm is not installed, simply double-click "standalone.html" to run the calculator directly in your browser.
+
+
+================================================================================
+PRACTICAL 4: NodeJS Server Serving Static HTML & CSS (Without Express)
+================================================================================
+Folder: Practical_4/
+Files:
+  - server.js   (Native Node.js HTTP server script)
+  - index.html  (Static HTML page)
+  - style.css   (Static CSS stylesheet)
+  - package.json
+
+HOW TO RUN:
+  1. Ensure Node.js is installed on your system.
+  2. Open Command Prompt (cmd) or PowerShell.
+  3. Navigate to Practical_4:
+       cd "uiux_prac\Practical_4"
+  4. Run the server:
+       node server.js
+  5. You will see: "Server running at http://localhost:3000"
+  6. Open your web browser and go to:
+       http://localhost:3000
+  7. To stop the server, press Ctrl + C in the terminal.
+
+
+================================================================================
+PRACTICAL 5: Counter using React JS
+================================================================================
+Folder: Practical_5/
+Files:
+  - index.html       (Main HTML template)
+  - src/main.jsx     (React root mounting script)
+  - src/App.jsx      (Counter component logic)
+  - package.json     (Project dependencies)
+  - vite.config.js   (Vite configuration)
+  - standalone.html  (Optional: Single-file version with React CDN for instant run)
+
+HOW TO RUN (Method 1 - Standard Vite React setup):
+  1. Open Command Prompt (cmd) or PowerShell.
+  2. Navigate to Practical_5:
+       cd "uiux_prac\Practical_5"
+  3. Install dependencies:
+       npm install
+  4. Start the development server:
+       npm run dev
+  5. Open the URL shown in terminal (usually http://localhost:5173/) in your browser.
+  6. Test the Increment, Decrement, and Reset buttons.
+
+HOW TO RUN (Method 2 - Direct Browser / Standalone):
+  1. Simply double-click "standalone.html" to run the counter directly in your browser.
+
+
+================================================================================
+PRACTICAL 6: Simple Login Form using React JS
+================================================================================
+Folder: Practical_6/
+Files:
+  - index.html       (Main HTML template)
+  - src/main.jsx     (React root mounting script)
+  - src/App.jsx      (Login form component logic)
+  - package.json     (Project dependencies)
+  - vite.config.js   (Vite configuration)
+  - standalone.html  (Optional: Single-file version with React CDN for instant run)
+
+HOW TO RUN (Method 1 - Standard Vite React setup):
+  1. Open Command Prompt (cmd) or PowerShell.
+  2. Navigate to Practical_6:
+       cd "uiux_prac\Practical_6"
+  3. Install dependencies:
+       npm install
+  4. Start the development server:
+       npm run dev
+  5. Open the URL shown in terminal (usually http://localhost:5173/) in your browser.
+  6. Test login credentials:
+       - Username: admin
+       - Password: 1234
+       - Result: "Login Successful!" (Any other input will show "Invalid Username or Password")
+
+HOW TO RUN (Method 2 - Direct Browser / Standalone):
+  1. Simply double-click "standalone.html" to run the login form directly in your browser.
+
+
+================================================================================
+PRACTICAL 7: Chat Module using HTML, CSS, and JavaScript
+================================================================================
+Folder: Practical_7/
+Files:
+  - index.html  (Chat structure)
+  - style.css   (Chat UI design & styling)
+  - script.js   (Chat logic & automated replies)
+
+HOW TO RUN:
+  1. Open the "Practical_7" folder.
+  2. Double-click on "index.html" to open it in any web browser.
+  3. Type messages like "hello", "how are you?", "bye", or anything else in the input box and click "Send".
+  4. The bot will automatically respond to your messages!
+
+================================================================================
+                              ALL PRACTICALS READY!
+================================================================================

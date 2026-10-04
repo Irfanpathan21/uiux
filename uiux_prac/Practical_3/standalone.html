@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Calculator</title>
+    <!-- Offline local scripts with CDN fallback -->
+    <script src="../lib/react.development.js"></script>
+    <script>window.React || document.write('<script src="https://unpkg.com/react@18/umd/react.development.js"><\/script>')</script>
+    <script src="../lib/react-dom.development.js"></script>
+    <script>window.ReactDOM || document.write('<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"><\/script>')</script>
+    <script src="../lib/babel.min.js"></script>
+    <script>window.Babel || document.write('<script src="https://unpkg.com/@babel/standalone/babel.min.js"><\/script>')</script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [display, setDisplay] = useState("");
+
+            const press = (val) => setDisplay(display + val);
+            const clear = () => setDisplay("");
+            const calculate = () => {
+                try {
+                    setDisplay(eval(display).toString());
+                } catch {
+                    setDisplay("Error");
+                }
+            };
+
+            const btnStyle = { width: "45px", height: "40px", margin: "4px", fontSize: "16px", cursor: "pointer" };
+
+            return (
+                <div style={{ width: "230px", margin: "40px auto", textAlign: "center", fontFamily: "Arial", border: "1px solid #ccc", padding: "16px", borderRadius: "8px" }}>
+                    <h3>React Calculator</h3>
+                    <input
+                        type="text"
+                        value={display}
+                        readOnly
+                        style={{ width: "95%", padding: "8px", fontSize: "18px", marginBottom: "10px", textAlign: "right" }}
+                    />
+                    <br />
+                    <button style={btnStyle} onClick={clear}>C</button>
+                    <button style={btnStyle} onClick={() => press("/")}>/</button>
+                    <button style={btnStyle} onClick={() => press("*")}>*</button>
+                    <button style={btnStyle} onClick={() => press("-")}>-</button>
+                    <br />
+                    <button style={btnStyle} onClick={() => press("7")}>7</button>
+                    <button style={btnStyle} onClick={() => press("8")}>8</button>
+                    <button style={btnStyle} onClick={() => press("9")}>9</button>
+                    <button style={btnStyle} onClick={() => press("+")}>+</button>
+                    <br />
+                    <button style={btnStyle} onClick={() => press("4")}>4</button>
+                    <button style={btnStyle} onClick={() => press("5")}>5</button>
+                    <button style={btnStyle} onClick={() => press("6")}>6</button>
+                    <button style={btnStyle} onClick={() => press("1")}>1</button>
+                    <br />
+                    <button style={btnStyle} onClick={() => press("2")}>2</button>
+                    <button style={btnStyle} onClick={() => press("3")}>3</button>
+                    <button style={btnStyle} onClick={() => press("0")}>0</button>
+                    <button style={{ ...btnStyle, background: "#2563eb", color: "white" }} onClick={calculate}>=</button>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>

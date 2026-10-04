@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Module</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat">
+        <h2>Chat Module</h2>
+        <div id="messages">
+            <div class="bot">Bot: Hello! How can I help you?</div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="Type a message" onkeydown="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

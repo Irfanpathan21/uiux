@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List - AngularJS</title>
+    <!-- Offline local script with CDN fallback -->
+    <script src="../lib/angular.min.js"></script>
+    <script>window.angular || document.write('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"><\/script>')</script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .box { width: 360px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { padding: 8px; width: 68%; }
+        button { padding: 8px 12px; cursor: pointer; }
+        li { margin: 10px 0; }
+        .remove-btn { color: red; margin-left: 10px; cursor: pointer; }
+    </style>
+</head>
+<body ng-app="shoppingApp" ng-controller="shoppingCtrl">
+    <div class="box">
+        <h2>Shopping List</h2>
+        <input type="text" ng-model="newItem" placeholder="Enter item">
+        <button ng-click="addItem()">Add</button>
+        <ul>
+            <li ng-repeat="item in items">
+                {{ item }}
+                <button class="remove-btn" ng-click="removeItem($index)">Remove</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var app = angular.module("shoppingApp", []);
+        app.controller("shoppingCtrl", function($scope) {
+            $scope.items = ["Milk", "Bread", "Eggs"];
+            $scope.addItem = function() {
+                if ($scope.newItem && $scope.newItem.trim() != "") {
+                    $scope.items.push($scope.newItem.trim());
+                    $scope.newItem = "";
+                }
+            };
+            $scope.removeItem = function(index) {
+                $scope.items.splice(index, 1);
+            };
+        });
+    </script>
+</body>
+</html>

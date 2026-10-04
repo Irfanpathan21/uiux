@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Counter</title>
+    <!-- Offline local scripts with CDN fallback -->
+    <script src="../lib/react.development.js"></script>
+    <script>window.React || document.write('<script src="https://unpkg.com/react@18/umd/react.development.js"><\/script>')</script>
+    <script src="../lib/react-dom.development.js"></script>
+    <script>window.ReactDOM || document.write('<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"><\/script>')</script>
+    <script src="../lib/babel.min.js"></script>
+    <script>window.Babel || document.write('<script src="https://unpkg.com/@babel/standalone/babel.min.js"><\/script>')</script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [count, setCount] = useState(0);
+
+            const btnStyle = {
+                padding: "8px 16px",
+                margin: "5px",
+                fontSize: "15px",
+                cursor: "pointer",
+                borderRadius: "4px",
+                border: "none",
+                color: "white"
+            };
+
+            return (
+                <div style={{ textAlign: "center", marginTop: "60px", fontFamily: "Arial" }}>
+                    <h2>Counter using ReactJS</h2>
+                    <h1 style={{ fontSize: "48px", color: count > 0 ? "green" : count < 0 ? "red" : "#333" }}>
+                        {count}
+                    </h1>
+                    <button style={{ ...btnStyle, backgroundColor: "#16a34a" }} onClick={() => setCount(count + 1)}>
+                        Increment
+                    </button>
+                    <button style={{ ...btnStyle, backgroundColor: "#dc2626" }} onClick={() => setCount(count - 1)}>
+                        Decrement
+                    </button>
+                    <button style={{ ...btnStyle, backgroundColor: "#64748b" }} onClick={() => setCount(0)}>
+                        Reset
+                    </button>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>

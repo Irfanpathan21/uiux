@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Login Form</title>
+    <!-- Offline local scripts with CDN fallback -->
+    <script src="../lib/react.development.js"></script>
+    <script>window.React || document.write('<script src="https://unpkg.com/react@18/umd/react.development.js"><\/script>')</script>
+    <script src="../lib/react-dom.development.js"></script>
+    <script>window.ReactDOM || document.write('<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"><\/script>')</script>
+    <script src="../lib/babel.min.js"></script>
+    <script>window.Babel || document.write('<script src="https://unpkg.com/@babel/standalone/babel.min.js"><\/script>')</script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [username, setUsername] = useState("");
+            const [password, setPassword] = useState("");
+            const [message, setMessage] = useState("");
+
+            function login(e) {
+                e.preventDefault();
+                if (username === "admin" && password === "1234") {
+                    setMessage("Login Successful!");
+                } else {
+                    setMessage("Invalid Username or Password");
+                }
+            }
+
+            return (
+                <div style={{
+                    width: "280px",
+                    margin: "50px auto",
+                    padding: "20px",
+                    border: "1px solid #ccc",
+                    borderRadius: "8px",
+                    textAlign: "center",
+                    fontFamily: "Arial"
+                }}>
+                    <h2>Login Form</h2>
+                    <form onSubmit={login}>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            style={{ width: "100%", padding: "8px", marginBottom: "10px", boxSizing: "border-box" }}
+                            required
+                        />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            style={{ width: "100%", padding: "8px", marginBottom: "10px", boxSizing: "border-box" }}
+                            required
+                        />
+                        <button
+                            type="submit"
+                            style={{ width: "100%", padding: "10px", backgroundColor: "#2563eb", color: "white", border: "none", borderRadius: "4px", cursor: "pointer", fontSize: "15px" }}
+                        >
+                            Login
+                        </button>
+                    </form>
+                    <p style={{ marginTop: "12px", fontWeight: "bold", color: message.includes("Successful") ? "green" : "red" }}>
+                        {message}
+                    </p>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>
